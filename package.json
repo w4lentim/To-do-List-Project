@@ -4,11 +4,14 @@
   "description": "Projeto To-do-list para o curso de BackEnd Development - Cellep",
   "main": "index.js",
   "scripts": {
-    "start": "node index"
+    "start": "node index",
+    "dev": "nodemon index"
   },
   "author": "Willian C. Valentim",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3"
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
   }
 }
