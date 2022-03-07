@@ -1,0 +1,14 @@
+{
+  "name": "to-do-list-project",
+  "version": "1.0.0",
+  "description": "Projeto To-do-list para o curso de BackEnd Development - Cellep",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "Willian C. Valentim",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
