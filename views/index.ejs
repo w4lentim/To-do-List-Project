@@ -22,15 +22,15 @@
 
         <% if (task == null) { %>
         <h1>To Do List Project</h1>
-        <form action="/create" method="post">
-            <input type="text" name="task" id="task" placeholder="Adicione uma tarefa">
+        <form action="/create" method="post" class="input-group">
+            <input type="text" name="task" id="task" placeholder="Adicione uma tarefa" class="form-control">
             <button type="submit" id="addButton" class="btn btn-primary">Adicionar</button>
         </form>
         <% } else { %>
         <h1>Editar Tarefa</h1>
-        <form action="/updateOneTask/<%= task._id %>" method="post">
-            <input type="text" name="task" id="task" value="<%= task.task %>">
-            <button type="submit" id="updateButton">Atualizar</button>
+        <form action="/updateOneTask/<%= task._id %>" method="post" class="input-group">
+            <input type="text" name="task" id="task" value="<%= task.task %>" class="form-control">
+            <button type="submit" id="updateButton" class="btn btn-primary">Atualizar</button>
         </form>
         <% } %>
 
@@ -43,7 +43,7 @@
             <li>
                 <%= task.task %> | <%= task.date.toLocaleDateString('pt-BR') %>
                 <a href="/getById/<%= task._id %>/update" class="btn btn-success m-1" role="button">Editar</a>
-                <a href="/getById/<%= task._id %>/delete" class="btn btn-danger m-1" role="button" data-bs-toggle="modal" data-bs-target="#mostrarModal">Apagar</a>
+                <a href="/getById/<%= task._id %>/delete" class="btn btn-danger m-1" role="button">Apagar</a>
             </li>
             <% }); %>
         </ul>
@@ -54,31 +54,14 @@
     <% if (taskDelete != null) { %>
     <section id="modal">
 
-        <div class="modal fade" id="mostrarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Confirmação</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <p>Deseja realmente deletar a tarefa <%= taskDelete.task %>?</p>
-                </div>
-                <div class="modal-footer">
-                  <a href="/" class="btn btn-secondary">Cancelar</a>
-                  <a href="/deleteOneTask/<%= taskDelete._id %>" class="btn btn-primary">Confirmar</a>
-                </div>
-              </div>
-            </div>
-        </div>
-        <!-- <div id="card">
+        <div id="card">
             <a href="/">X</a>
             <h2>Confirmação</h2>
             <hr>
             <p>Deseja realmente <span>deletar</span> a tarefa <%= taskDelete.task %>?</p>
             <a href="/">Cancelar</a>
             <a href="/deleteOneTask/<%= taskDelete._id %>">Confirmar</a>
-        </div> -->
+        </div>
 
     </section>
     <% } %>
