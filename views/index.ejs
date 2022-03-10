@@ -60,12 +60,12 @@
     <section id="modal">
 
         <div id="card">
-            <a href="/">X</a>
+            <a href="/" class="btn-close btn-lg" aria-label="close" role="button"></a>
             <h2>Confirmação</h2>
             <hr>
             <p>Deseja realmente <span>deletar</span> a tarefa <%= taskDelete.task %>?</p>
-            <a href="/">Cancelar</a>
-            <a href="/deleteOneTask/<%= taskDelete._id %>">Confirmar</a>
+            <a href="/" class="btn btn-danger btn-sm" role="button">Cancelar</a>
+            <a href="/deleteOneTask/<%= taskDelete._id %>" class="btn btn-success btn-sm" role="button">Confirmar</a>
         </div>
 
     </section>
